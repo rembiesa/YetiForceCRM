@@ -94,9 +94,6 @@ class Vtiger_Multipicklist_UIType extends Vtiger_Base_UIType
 		if (\is_array($value)) {
 			return $value;
 		}
-		if (null === $value) {
-			$value = '';
-		}
 		return explode(' |##| ', \App\Purifier::encodeHtml($value));
 	}
 
