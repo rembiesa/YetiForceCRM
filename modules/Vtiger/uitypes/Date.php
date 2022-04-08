@@ -88,12 +88,6 @@ class Vtiger_Date_UIType extends Vtiger_Base_UIType
 	{
 		if (empty($value) || ' ' === $value) {
 			$value = '';
-			$fieldName = $this->getFieldModel()->getFieldName();
-			$moduleName = $this->getFieldModel()->getModule()->getName();
-			//Restricted Fields for to show Default Value
-			if (('birthday' === $fieldName && 'Contacts' === $moduleName) || 'Products' === $moduleName) {
-				return \App\Purifier::encodeHtml($value);
-			}
 		} else {
 			$value = DateTimeField::convertToUserFormat($value);
 		}
