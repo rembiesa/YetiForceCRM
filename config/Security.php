@@ -24,7 +24,7 @@ class Security
 	public static $USER_ENCRYPT_PASSWORD_COST = 10;
 
 	/** Possible to reset the password while logging in (true/false) */
-	public static $RESET_LOGIN_PASSWORD = false;
+	public static $RESET_LOGIN_PASSWORD = true;
 
 	/** Show my preferences */
 	public static $SHOW_MY_PREFERENCES = true;
@@ -72,7 +72,7 @@ class Security
 	public static $EMAIL_FIELD_RESTRICTED_DOMAINS_ACTIVE = false;
 
 	/** Restricted domains */
-	public static $EMAIL_FIELD_RESTRICTED_DOMAINS_VALUES = [];
+	public static $EMAIL_FIELD_RESTRICTED_DOMAINS_VALUES = ['yetiforce.com'];
 
 	/** List of modules where restricted domains are enabled, if empty it will be enabled everywhere. */
 	public static $EMAIL_FIELD_RESTRICTED_DOMAINS_ALLOWED = [];
@@ -87,7 +87,7 @@ class Security
 	public static $fieldsReferencesDependent = false;
 
 	/** Lifetime session (in seconds) */
-	public static $maxLifetimeSession = 900;
+	public static $maxLifetimeSession = 86400;
 
 	/**
 	 * Specifies the lifetime of the cookie in seconds which is sent to the browser. The value 0 means 'until the browser is closed.'
@@ -100,13 +100,13 @@ class Security
 
 	/**
 	 * Same-site cookie attribute allows a web application to advise the browser that cookies should only be sent if the request originates from the website the cookie came from.
-	 * Values: None, Lax, Strict
+	 * Values: None, Lax, Strict.
 	 */
 	public static $cookieSameSite = 'Strict';
 
 	/**
 	 * Force the use of https only for cookie.
-	 * Values: true, false, null
+	 * Values: true, false, null.
 	 */
 	public static $cookieForceHttpOnly = true;
 
@@ -161,7 +161,7 @@ class Security
 	public static $csrfFrameBreaker = true;
 
 	/** Which window should be verified? It is used to check if the system is loaded in the frame, used in CSRF. */
-	public static $csrfFrameBreakerWindow = 'top';
+	public static $csrfFrameBreakerWindow = 'parent';
 
 	/** HTTP Content Security Policy response header allows website administrators to control resources the user agent is allowed to load for a given page */
 	public static $cspHeaderActive = true;
@@ -179,7 +179,7 @@ class Security
 	public static $allowedFrameDomains = [];
 
 	/** Allowed domains for loading script, used in CSP. */
-	public static $allowedScriptDomains = [];
+	public static $allowedScriptDomains = ['https://appsforoffice.microsoft.com', 'https://ajax.aspnetcdn.com'];
 
 	/** Allowed domains which can be used as the target of a form submissions from a given context, used in CSP. */
 	public static $allowedFormDomains = ['https://www.paypal.com'];
@@ -197,7 +197,7 @@ class Security
 	public static $allowedDomainsLoadInFrame = [];
 
 	/** List of allowed domains for fields with HTML support */
-	public static $purifierAllowedDomains = [];
+	public static $purifierAllowedDomains = ['yetiforce.com', 'github.com'];
 
 	/** Do you want all connections to be made using a proxy? */
 	public static $proxyConnection = false;
@@ -218,11 +218,11 @@ class Security
 	public static $proxyPassword = '';
 
 	/** @var bool Ask admin about visit purpose */
-	public static $askAdminAboutVisitPurpose = true;
+	public static $askAdminAboutVisitPurpose = false;
 
 	/** @var bool Ask admin about switch users purpose */
 	public static $askAdminAboutVisitSwitchUsers = true;
 
 	/** @var bool Ask super user about visit purpose, only for the settings part */
-	public static $askSuperUserAboutVisitPurpose = true;
+	public static $askSuperUserAboutVisitPurpose = false;
 }
