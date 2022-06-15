@@ -7,6 +7,8 @@
     "LBL_VIES": "Confirm the VAT-EU number",
     "LBL_VIES_DESC": "Checks if the business entity has a valid VAT-EU number for intra-community transactions within the European Union.",
     "LBL_PRINTED_BY": "printed by",
-    "LBL_IN_DAY": "in day"
+    "LBL_IN_DAY": "in day",
+    "LBL_REQUEST_DATE": "Request Date",
+    "LBL_REQUEST_ID": "Request ID"
   }
 }
